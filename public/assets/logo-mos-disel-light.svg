@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="112" viewBox="0 0 360 112" role="img" aria-labelledby="title desc">
+  <title id="title">МОС-ДИЗЕЛЬ</title>
+  <desc id="desc">Светлая версия логотипа МОС-ДИЗЕЛЬ с огнем и каплей топлива</desc>
+  <defs>
+    <linearGradient id="flameYellow" x1="59" y1="8" x2="83" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF200"/>
+      <stop offset="0.54" stop-color="#F2D31B"/>
+      <stop offset="1" stop-color="#E75F12"/>
+    </linearGradient>
+    <linearGradient id="flameGreen" x1="86" y1="12" x2="111" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#85D300"/>
+      <stop offset="0.56" stop-color="#3E9E20"/>
+      <stop offset="1" stop-color="#0B6B3A"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="112" rx="0" fill="#0B0C0A"/>
+  <g transform="translate(10 8) scale(0.78)">
+    <path d="M67.1 3.8C72.4 25.2 54.2 37.5 48.1 52.5C40.8 70.6 47.9 90.7 66.6 103.9C42.6 99.4 26.2 82.5 28.2 60.7C29.3 47.6 38.8 36.9 47.2 26.6C53 19.4 58.4 11.8 58.2 2.1C61 2.1 64 2.7 67.1 3.8Z" fill="url(#flameYellow)"/>
+    <path d="M88.2 11.5C87 28.2 98.7 40.6 106.2 52.7C116.9 70.1 111.9 93.1 91 104.9C101.8 83.8 84.5 70.6 78.4 56.7C72.4 43 77.4 24.6 88.2 11.5Z" fill="url(#flameGreen)"/>
+    <path d="M76.3 44.2C92.1 61.2 101.7 78.8 91.1 94.8C83.4 106.5 65.3 107.5 55.7 97.1C43.7 84.2 53.6 63.2 76.3 44.2Z" fill="#0B6B3A"/>
+    <path d="M61.9 71.5C65.6 84.8 71.8 91.2 84.4 94.2C72.7 99 60.5 95.7 56.8 85.5C55 80.5 56.6 75.5 61.9 71.5Z" fill="#FFFFFF" opacity="0.92"/>
+  </g>
+  <g font-family="Helvetica Neue, Arial, sans-serif">
+    <text x="104" y="48" font-size="31" font-weight="900" letter-spacing="-0.65" fill="#FFFFFF">МОС-ДИЗЕЛЬ</text>
+    <rect x="104" y="60" width="194" height="2" fill="#F2D31B"/>
+    <text x="104" y="80" font-size="11" font-weight="800" letter-spacing="0" fill="#D8DED9">ДИЗТОПЛИВО С ДОСТАВКОЙ</text>
+  </g>
+</svg>
