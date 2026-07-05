@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import '@/scss/mosdisel.scss';
+import '@/scss/mos-dizel.scss';
 </script>
 
 <template>

@@ -10,15 +10,30 @@ Frontend-проект сайта `mos-dizel.ru` на базе Vue 3, Vuetify 3, 
 - Pinia, Vue Router
 - GitHub Pages deploy через GitHub Actions
 
+## Рабочая папка
+
+```bash
+cd /home/user/mos-dizel.ru
+```
+
 ## Команды
+
+```bash
+make install
+make dev
+make lint
+make typecheck
+make build
+make check
+```
+
+Если запускаешь без `make`:
 
 ```bash
 source ~/.nvm/nvm.sh
 nvm use 24
 npm ci
 npm run dev
-npm run typecheck
-npm run build
 ```
 
 ## Deploy
@@ -27,4 +42,6 @@ Deploy настроен в `.github/workflows/deploy.yml`: `npm ci` -> `npm run 
 
 Разовая настройка в GitHub: `Settings -> Pages -> Source -> GitHub Actions`.
 
-Remote: `git@github.com:rebit-pro/mosdisel.git`.
+Remote: `git@github.com:rebit-pro/mos-dizel.ru.git`.
+
+DNS и GitHub Pages инструкция: `docs/deploy/github-pages-dns.md`.

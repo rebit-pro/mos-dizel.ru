@@ -8,7 +8,7 @@ const PublicRoutes = {
     {
       name: 'Home',
       path: '/',
-      component: () => import('@/views/mosdisel/HomePage.vue')
+      component: () => import('@/views/mos-dizel/HomePage.vue')
     },
     {
       name: 'Error 404',
