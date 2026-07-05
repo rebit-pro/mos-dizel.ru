@@ -5,7 +5,7 @@ import '@/scss/mosdisel.scss';
 <template>
   <header class="site-header">
     <a class="brand" href="/" aria-label="МОС-ДИЗЕЛЬ">
-      <img src="/assets/logo-mos-disel.svg" alt="МОС-ДИЗЕЛЬ" />
+      <img src="/assets/logo-mos-dizel.svg" alt="МОС-ДИЗЕЛЬ" />
     </a>
     <nav class="main-nav" aria-label="Основная навигация">
       <a href="#services">Услуги</a>
@@ -345,8 +345,8 @@ import '@/scss/mosdisel.scss';
   <footer id="contacts" class="site-footer">
     <div class="section-inner footer-grid">
       <div>
-        <img class="footer-logo" src="/assets/logo-mos-disel-light.svg" alt="МОС-ДИЗЕЛЬ" />
-        <p>mos-disel.ru - домен поставки дизельного топлива по Москве и Московской области.</p>
+        <img class="footer-logo" src="/assets/logo-mos-dizel-light.svg" alt="МОС-ДИЗЕЛЬ" />
+        <p>mos-dizel.ru - домен поставки дизельного топлива по Москве и Московской области.</p>
       </div>
       <div>
         <h2>Контакты</h2>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mos-disel.ru/sitemap.xml
+Sitemap: https://mos-dizel.ru/sitemap.xml

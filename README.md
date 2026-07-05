@@ -1,6 +1,6 @@
 # Мос-Дизель
 
-Frontend-проект сайта `mos-disel.ru` на базе Vue 3, Vuetify 3, Vite и Berry seed template.
+Frontend-проект сайта `mos-dizel.ru` на базе Vue 3, Vuetify 3, Vite и Berry seed template.
 
 ## Стек
 
