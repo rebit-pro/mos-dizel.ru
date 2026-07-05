@@ -253,43 +253,42 @@ textarea {
 }
 
 .quote-container {
-  width: min(100%, var(--container-max));
+  width: min(calc(100% - 64px), var(--container-max));
+  max-width: var(--container-max) !important;
   margin: 0 auto;
-  padding: var(--space-10) var(--space-8) !important;
+  padding: var(--space-8) 0 !important;
 }
 
 .quote-shell {
   overflow: hidden;
   background: var(--color-surface);
   border: 1px solid rgba(11, 107, 58, 0.16);
-  box-shadow: 0 24px 70px rgba(22, 32, 24, 0.08);
+  border-radius: var(--radius-md) !important;
+  box-shadow: 0 14px 42px rgba(22, 32, 24, 0.07);
 }
 
-.quote-layout {
-  min-height: 520px;
+.quote-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
 }
 
 .quote-summary {
-  background:
-    linear-gradient(180deg, rgba(255, 205, 41, 0.12) 0%, rgba(11, 107, 58, 0) 36%),
-    var(--color-primary);
+  display: grid;
+  align-content: space-between;
+  gap: var(--space-6);
+  padding: 28px var(--space-8);
+  background: var(--color-primary);
   color: var(--color-surface);
-}
-
-.quote-summary__inner {
-  display: flex;
-  min-height: 100%;
-  flex-direction: column;
-  padding: var(--space-8);
 }
 
 .quote-chip {
   width: fit-content;
+  min-height: 28px;
   color: var(--color-text) !important;
+  font-size: 12px;
   font-weight: 800;
 }
 
-.quote-title,
 .section-head h2,
 .quality-layout h2,
 .fleet-content h2 {
@@ -297,42 +296,47 @@ textarea {
 }
 
 .quote-title {
-  max-width: 440px;
-  margin-top: var(--space-6);
+  max-width: 320px;
+  margin-top: var(--space-5);
   color: var(--color-surface);
+  font-size: 34px;
 }
 
 .quote-lead {
-  max-width: 430px;
-  margin: var(--space-5) 0 0;
+  max-width: 320px;
+  margin: var(--space-4) 0 0;
   color: rgba(255, 255, 255, 0.82);
-  font-size: 17px;
-  line-height: 1.58;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .quote-stat-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-3);
-  margin-top: var(--space-8);
 }
 
 .quote-stat {
-  min-height: 118px;
-  padding: var(--space-4);
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  column-gap: var(--space-3);
+  row-gap: 2px;
+  align-items: center;
+  min-height: 74px;
+  padding: var(--space-3);
   border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: var(--radius-sm);
 }
 
 .quote-stat .v-icon {
+  grid-row: 1 / 3;
   color: var(--color-accent);
 }
 
 .quote-stat strong {
   display: block;
-  margin-top: var(--space-4);
   color: var(--color-surface);
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 800;
   line-height: 1;
   font-variant-numeric: tabular-nums;
@@ -340,144 +344,153 @@ textarea {
 
 .quote-stat span {
   display: block;
-  margin-top: var(--space-3);
   color: rgba(255, 255, 255, 0.72);
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.quote-benefits {
-  display: grid;
-  gap: var(--space-3);
-  margin-top: auto;
-  padding-top: var(--space-8);
-}
-
-.quote-benefit {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-3);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: var(--radius-sm);
-}
-
-.quote-benefit__icon {
-  display: inline-flex;
-  width: 40px;
-  height: 40px;
-  flex: 0 0 40px;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-accent);
-  background: rgba(255, 205, 41, 0.12);
-  border-radius: var(--radius-sm);
-}
-
-.quote-benefit strong,
-.quote-benefit small {
-  display: block;
-}
-
-.quote-benefit strong {
-  color: var(--color-surface);
-  font-size: 14px;
-}
-
-.quote-benefit small {
-  margin-top: 2px;
-  color: rgba(255, 255, 255, 0.66);
   font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .quote-workspace {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: var(--space-8);
-  background:
-    linear-gradient(180deg, rgba(247, 247, 248, 0.82) 0%, rgba(255, 255, 255, 0) 46%),
-    var(--color-surface);
+  padding: 28px var(--space-8);
+  background: var(--color-surface);
 }
 
 .quote-form-head {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: var(--space-5);
-  margin-bottom: var(--space-6);
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
 }
 
 .quote-form-kicker {
-  margin: 0 0 var(--space-2);
+  margin: 0 0 var(--space-1);
   color: var(--color-primary);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
 }
 
 .quote-form-head h3 {
   margin: 0;
   color: var(--color-text);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 800;
   line-height: 1.15;
 }
 
 .quote-phone-chip {
   flex: 0 0 auto;
+  border-radius: var(--radius-sm) !important;
   font-weight: 700;
 }
 
 .quote-form {
   display: grid;
-  gap: var(--space-5);
+  gap: var(--space-4);
+}
+
+.quote-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.quote-field-group label {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--color-steel);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .quote-form .v-field {
-  min-height: 54px;
+  --v-field-border-radius: var(--radius-sm);
+  min-height: 44px;
   background: var(--color-bg);
-  border-radius: var(--radius-sm);
+  border: 1px solid rgba(22, 32, 24, 0.12);
+  border-radius: var(--radius-sm) !important;
+  box-shadow: none;
 }
 
-.quote-form .v-field__outline {
-  --v-field-border-opacity: 0.28;
+.quote-form .v-field__field,
+.quote-form .v-field__input {
+  border-radius: var(--radius-sm) !important;
 }
 
-.quote-form .v-label {
-  color: var(--color-steel);
-  font-weight: 700;
-  opacity: 1;
+.quote-form .v-field:hover {
+  border-color: rgba(11, 107, 58, 0.34);
 }
 
-.quote-field .v-field__prepend-inner {
+.quote-form .v-field--focused {
+  border-color: var(--color-primary);
+}
+
+.quote-form .v-field__input {
+  min-height: 42px;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+.quote-form .v-field__prepend-inner,
+.quote-form .v-field__append-inner {
+  min-height: 42px;
+  padding-top: 0;
   color: var(--color-primary);
 }
 
-.quote-assurance {
-  border: 1px solid rgba(11, 107, 58, 0.18);
+.quote-form .v-field__overlay,
+.quote-form .v-field__outline {
+  display: none;
+}
+
+.quote-proof-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.quote-proof-chip {
+  border-radius: var(--radius-sm) !important;
+  font-weight: 700;
+}
+
+.quote-note {
+  color: var(--color-muted);
+  font-size: 13px;
 }
 
 .quote-action-row {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-5);
+  gap: var(--space-4);
+  padding-top: var(--space-1);
 }
 
 .quote-submit {
-  min-width: 230px;
-  min-height: 52px;
+  min-width: 206px;
+  min-height: 46px;
   color: var(--color-surface) !important;
   background: var(--color-primary) !important;
   font-weight: 800;
 }
 
+.quote-call {
+  color: var(--color-primary);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
 .quote-privacy {
-  max-width: 330px;
+  max-width: 300px;
   margin: 0;
   color: var(--color-muted);
-  font-size: 13px;
-  line-height: 1.45;
+  font-size: 12px;
+  line-height: 1.35;
 }
 
 .process-section,
@@ -889,12 +902,13 @@ details p {
     grid-template-columns: 1fr;
   }
 
-  .quote-layout {
-    min-height: auto;
+  .quote-grid {
+    grid-template-columns: 1fr;
   }
 
-  .quote-workspace {
-    padding-top: var(--space-7);
+  .quote-summary {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+    align-items: end;
   }
 
   .process-list {
@@ -988,7 +1002,10 @@ details p {
     margin-top: var(--space-6);
   }
 
-  .quote-title,
+  .quote-title {
+    font-size: 28px;
+  }
+
   .section-head h2,
   .quality-layout h2,
   .fleet-content h2 {
@@ -996,16 +1013,18 @@ details p {
   }
 
   .quote-container {
-    padding-right: var(--space-4) !important;
-    padding-left: var(--space-4) !important;
+    width: min(calc(100% - 32px), var(--container-max));
+    padding-right: 0 !important;
+    padding-left: 0 !important;
   }
 
-  .quote-summary__inner,
+  .quote-summary,
   .quote-workspace {
     padding: var(--space-6);
   }
 
-  .quote-stat-grid,
+  .quote-summary,
+  .quote-fields,
   .process-list,
   .audience-grid,
   .proof-grid,
@@ -1022,6 +1041,7 @@ details p {
 
   .quote-phone-chip,
   .quote-submit,
+  .quote-call,
   .quote-privacy {
     width: 100%;
     max-width: none;
