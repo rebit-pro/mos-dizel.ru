@@ -1,5 +1,35 @@
 <script setup lang="ts">
+import { reactive } from 'vue';
+
+import UiTextfieldPrimary from '@/components/shared/UiTextfieldPrimary.vue';
 import '@/scss/mos-dizel.scss';
+
+const quoteForm = reactive({
+  volume: '',
+  fuel: 'dt-c',
+  address: '',
+  phone: ''
+});
+
+const fuelOptions = [
+  { title: 'ДТ C (-5 °C)', value: 'dt-c' },
+  { title: 'ДТ E (-15 °C)', value: 'dt-e' },
+  { title: 'ДТ F (-25 °C)', value: 'dt-f' },
+  { title: 'ДТЗ до -30 °C', value: 'dtz-30' }
+];
+
+const quoteStats = [
+  { value: '5 минут', label: 'на первичный звонок', icon: 'mdi-timer-outline' },
+  { value: '2-3 часа', label: 'на срочную поставку', icon: 'mdi-truck-fast-outline' }
+];
+
+const quoteBenefits = [
+  { title: 'Паспорт качества', text: 'на каждую партию', icon: 'mdi-file-document-check-outline' },
+  { title: 'Арбитражная проба', text: 'фиксируем при сливе', icon: 'mdi-flask-outline' },
+  { title: 'НДС и ЭДО', text: 'документы для юрлиц', icon: 'mdi-receipt-text-check-outline' }
+];
+
+const requiredRule = (value: string) => Boolean(value) || 'Заполните поле';
 </script>
 
 <template>
@@ -47,49 +77,130 @@ import '@/scss/mos-dizel.scss';
     </section>
 
     <section id="quote" class="quote-band" aria-labelledby="quote-title">
-      <div class="section-inner">
-        <div class="quote-panel">
-          <div class="quote-heading">
-            <p class="eyebrow">Быстрый расчет</p>
-            <h2 id="quote-title">Цена и срок поставки за один звонок</h2>
-            <p>Оставьте объем, марку топлива и район доставки. Менеджер рассчитает цену, подберет топливо под сезон и уточнит документы.</p>
-            <div class="quote-metrics" aria-label="Что входит в расчет">
-              <div>
-                <strong>5 минут</strong>
-                <span>на обратный звонок</span>
+      <v-container class="quote-container" fluid>
+        <v-card class="quote-shell" elevation="0" rounded="lg">
+          <v-row no-gutters class="quote-layout">
+            <v-col cols="12" lg="5" class="quote-summary">
+              <div class="quote-summary__inner">
+                <v-chip class="quote-chip" color="warning" variant="flat" prepend-icon="mdi-lightning-bolt-outline">Быстрый расчет</v-chip>
+                <h2 id="quote-title" class="quote-title">Цена и срок поставки за один звонок</h2>
+                <p class="quote-lead">
+                  Оставьте объем, марку топлива и район доставки. Менеджер рассчитает цену, подберет сезонную марку и уточнит документы.
+                </p>
+
+                <div class="quote-stat-grid" aria-label="Скорость обработки заявки">
+                  <div v-for="stat in quoteStats" :key="stat.value" class="quote-stat">
+                    <v-icon :icon="stat.icon" size="22" />
+                    <strong>{{ stat.value }}</strong>
+                    <span>{{ stat.label }}</span>
+                  </div>
+                </div>
+
+                <div class="quote-benefits" aria-label="Что проверяем при расчете">
+                  <div v-for="benefit in quoteBenefits" :key="benefit.title" class="quote-benefit">
+                    <span class="quote-benefit__icon">
+                      <v-icon :icon="benefit.icon" size="20" />
+                    </span>
+                    <span>
+                      <strong>{{ benefit.title }}</strong>
+                      <small>{{ benefit.text }}</small>
+                    </span>
+                  </div>
+                </div>
               </div>
-              <div>
-                <strong>2-3 часа</strong>
-                <span>на срочную поставку</span>
+            </v-col>
+
+            <v-col cols="12" lg="7" class="quote-workspace">
+              <div class="quote-form-head">
+                <div>
+                  <p class="quote-form-kicker">Заявка на расчет</p>
+                  <h3>Данные для менеджера</h3>
+                </div>
+                <v-chip class="quote-phone-chip" variant="tonal" color="success" prepend-icon="mdi-phone-in-talk-outline"
+                  >Перезвон в рабочем порядке</v-chip
+                >
               </div>
-            </div>
-          </div>
-          <form class="quote-form" action="#" method="post">
-            <label>
-              Объем
-              <input type="text" name="volume" placeholder="Например, 1000 л" />
-            </label>
-            <label>
-              Вид топлива
-              <select name="fuel">
-                <option>ДТ C (-5C)</option>
-                <option>ДТ E (-15C)</option>
-                <option>ДТ F (-25C)</option>
-                <option>ДТЗ до -30C</option>
-              </select>
-            </label>
-            <label>
-              Район доставки
-              <input type="text" name="address" placeholder="Москва или область" />
-            </label>
-            <label>
-              Телефон
-              <input type="tel" name="phone" placeholder="+7" />
-            </label>
-            <button class="button button-primary" type="submit">Получить расчет</button>
-          </form>
-        </div>
-      </div>
+
+              <v-form class="quote-form" action="#" method="post" validate-on="submit lazy">
+                <v-row dense>
+                  <v-col cols="12" sm="6">
+                    <UiTextfieldPrimary
+                      v-model="quoteForm.volume"
+                      class="quote-field"
+                      name="volume"
+                      label="Объем"
+                      placeholder="Например, 1000 л"
+                      variant="outlined"
+                      density="comfortable"
+                      hide-details="auto"
+                      prepend-inner-icon="mdi-gauge"
+                      :rules="[requiredRule]"
+                    />
+                  </v-col>
+                  <v-col cols="12" sm="6">
+                    <v-select
+                      v-model="quoteForm.fuel"
+                      class="quote-field"
+                      :items="fuelOptions"
+                      item-title="title"
+                      item-value="value"
+                      name="fuel"
+                      label="Вид топлива"
+                      variant="outlined"
+                      density="comfortable"
+                      hide-details="auto"
+                      prepend-inner-icon="mdi-fuel"
+                      :rules="[requiredRule]"
+                    />
+                  </v-col>
+                  <v-col cols="12" sm="6">
+                    <UiTextfieldPrimary
+                      v-model="quoteForm.address"
+                      class="quote-field"
+                      name="address"
+                      label="Район доставки"
+                      placeholder="Москва или область"
+                      variant="outlined"
+                      density="comfortable"
+                      hide-details="auto"
+                      prepend-inner-icon="mdi-map-marker-outline"
+                      :rules="[requiredRule]"
+                    />
+                  </v-col>
+                  <v-col cols="12" sm="6">
+                    <UiTextfieldPrimary
+                      v-model="quoteForm.phone"
+                      class="quote-field"
+                      name="phone"
+                      label="Телефон"
+                      placeholder="+7 999 000-00-00"
+                      type="tel"
+                      inputmode="tel"
+                      autocomplete="tel"
+                      variant="outlined"
+                      density="comfortable"
+                      hide-details="auto"
+                      prepend-inner-icon="mdi-phone-outline"
+                      :rules="[requiredRule]"
+                    />
+                  </v-col>
+                </v-row>
+
+                <v-alert class="quote-assurance" color="success" variant="tonal" density="comfortable" icon="mdi-shield-check-outline">
+                  Расчет включает сезонность топлива, документы, способ оплаты и возможность срочной доставки.
+                </v-alert>
+
+                <div class="quote-action-row">
+                  <v-btn class="quote-submit" type="submit" size="large" prepend-icon="mdi-calculator-variant-outline"
+                    >Получить расчет</v-btn
+                  >
+                  <p class="quote-privacy">Без рассылок. Контакт нужен только для уточнения цены и времени поставки.</p>
+                </div>
+              </v-form>
+            </v-col>
+          </v-row>
+        </v-card>
+      </v-container>
     </section>
 
     <section class="process-section">
