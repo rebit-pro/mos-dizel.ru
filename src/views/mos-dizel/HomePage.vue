@@ -19,15 +19,11 @@ const fuelOptions = [
 ];
 
 const quoteStats = [
-  { value: '5 минут', label: 'на звонок', icon: 'mdi-timer-outline' },
-  { value: '2-3 часа', label: 'срочная доставка', icon: 'mdi-truck-fast-outline' }
+  { value: '5 минут', label: 'на звонок' },
+  { value: '2-3 часа', label: 'срочная доставка' }
 ];
 
-const quoteBenefits = [
-  { title: 'Паспорт качества', icon: 'mdi-file-document-check-outline' },
-  { title: 'Арбитражная проба', icon: 'mdi-flask-outline' },
-  { title: 'НДС и ЭДО', icon: 'mdi-receipt-text-check-outline' }
-];
+const quoteBenefits = [{ title: 'Паспорт качества' }, { title: 'Арбитражная проба' }, { title: 'НДС и ЭДО' }];
 
 const requiredRule = (value: string) => Boolean(value) || 'Заполните поле';
 </script>
@@ -52,12 +48,14 @@ const requiredRule = (value: string) => Boolean(value) || 'Заполните п
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-content">
-        <p class="eyebrow">Москва и Московская область</p>
-        <h1 id="hero-title">Дизельное топливо с доставкой за 2-3 часа</h1>
-        <p class="hero-lead">От 300 до 20 000 литров. Паспорт качества, арбитражная проба при сливе, документы для юридических лиц.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#quote">Рассчитать поставку</a>
-          <a class="button button-secondary" href="#quality">Контроль качества</a>
+        <div class="hero-copy">
+          <p class="eyebrow">Москва и Московская область</p>
+          <h1 id="hero-title">Доставка дизельного топлива за 2-3 часа</h1>
+          <p class="hero-lead">От 300 до 20 000 литров. Паспорт качества, арбитражная проба при сливе, документы для юридических лиц.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#quote">Рассчитать поставку</a>
+            <a class="button button-secondary" href="#quality">Контроль качества</a>
+          </div>
         </div>
         <dl class="hero-facts" aria-label="Ключевые условия">
           <div>
@@ -82,16 +80,13 @@ const requiredRule = (value: string) => Boolean(value) || 'Заполните п
           <div class="quote-grid">
             <aside class="quote-summary">
               <div class="quote-summary__top">
-                <v-chip class="quote-chip" color="warning" variant="flat" size="small" prepend-icon="mdi-lightning-bolt-outline">
-                  Быстрый расчет
-                </v-chip>
+                <v-chip class="quote-chip" color="warning" variant="flat" size="small"> Быстрый расчет </v-chip>
                 <h2 id="quote-title" class="quote-title">Цена и срок поставки</h2>
                 <p class="quote-lead">Оставьте 4 параметра. Менеджер вернет цену, срок, сезонную марку и список документов.</p>
               </div>
 
               <div class="quote-stat-grid" aria-label="Скорость обработки заявки">
                 <div v-for="stat in quoteStats" :key="stat.value" class="quote-stat">
-                  <v-icon :icon="stat.icon" size="20" />
                   <strong>{{ stat.value }}</strong>
                   <span>{{ stat.label }}</span>
                 </div>
@@ -104,9 +99,7 @@ const requiredRule = (value: string) => Boolean(value) || 'Заполните п
                   <p class="quote-form-kicker">Заявка на расчет</p>
                   <h3>Заполните данные для менеджера</h3>
                 </div>
-                <v-chip class="quote-phone-chip" variant="tonal" color="success" size="small" prepend-icon="mdi-phone-in-talk-outline">
-                  Перезвон без рассылок
-                </v-chip>
+                <v-chip class="quote-phone-chip" variant="tonal" color="success" size="small"> Перезвон без рассылок </v-chip>
               </div>
 
               <v-form class="quote-form" action="#" method="post" validate-on="submit lazy">
@@ -124,7 +117,6 @@ const requiredRule = (value: string) => Boolean(value) || 'Заполните п
                       density="compact"
                       flat
                       hide-details="auto"
-                      prepend-inner-icon="mdi-gauge"
                       :rules="[requiredRule]"
                     />
                   </div>
@@ -144,7 +136,6 @@ const requiredRule = (value: string) => Boolean(value) || 'Заполните п
                       density="compact"
                       flat
                       hide-details="auto"
-                      prepend-inner-icon="mdi-fuel"
                       menu-icon="mdi-chevron-down"
                       :rules="[requiredRule]"
                     />
@@ -163,7 +154,6 @@ const requiredRule = (value: string) => Boolean(value) || 'Заполните п
                       density="compact"
                       flat
                       hide-details="auto"
-                      prepend-inner-icon="mdi-map-marker-outline"
                       :rules="[requiredRule]"
                     />
                   </div>
@@ -184,7 +174,6 @@ const requiredRule = (value: string) => Boolean(value) || 'Заполните п
                       density="compact"
                       flat
                       hide-details="auto"
-                      prepend-inner-icon="mdi-phone-outline"
                       :rules="[requiredRule]"
                     />
                   </div>
@@ -198,7 +187,6 @@ const requiredRule = (value: string) => Boolean(value) || 'Заполните п
                     color="success"
                     variant="outlined"
                     size="small"
-                    :prepend-icon="benefit.icon"
                   >
                     {{ benefit.title }}
                   </v-chip>
@@ -206,9 +194,7 @@ const requiredRule = (value: string) => Boolean(value) || 'Заполните п
                 </div>
 
                 <div class="quote-action-row">
-                  <v-btn class="quote-submit" type="submit" size="large" prepend-icon="mdi-calculator-variant-outline">
-                    Получить расчет
-                  </v-btn>
+                  <v-btn class="quote-submit" type="submit" size="large"> Получить расчет </v-btn>
                   <a class="quote-call" href="tel:+74951205083">+7 (495) 120-50-83</a>
                   <p class="quote-privacy">Контакт нужен только для уточнения цены и времени поставки.</p>
                 </div>
@@ -230,28 +216,38 @@ const requiredRule = (value: string) => Boolean(value) || 'Заполните п
         </div>
         <ol class="process-list">
           <li>
-            <span>01</span>
-            <strong>Заявка</strong>
+            <div class="process-step-head">
+              <span>01</span>
+              <strong>Заявка</strong>
+            </div>
             <p>Фиксируем объем, адрес, тип топлива и формат оплаты.</p>
           </li>
           <li>
-            <span>02</span>
-            <strong>Расчет</strong>
+            <div class="process-step-head">
+              <span>02</span>
+              <strong>Расчет</strong>
+            </div>
             <p>Менеджер уточняет цену, срок и документы для поставки.</p>
           </li>
           <li>
-            <span>03</span>
-            <strong>Бензовоз</strong>
+            <div class="process-step-head">
+              <span>03</span>
+              <strong>Бензовоз</strong>
+            </div>
             <p>Машина выезжает на объект в согласованное время.</p>
           </li>
           <li>
-            <span>04</span>
-            <strong>Проба</strong>
+            <div class="process-step-head">
+              <span>04</span>
+              <strong>Проба</strong>
+            </div>
             <p>Водитель делает арбитражную пробу при клиенте.</p>
           </li>
           <li>
-            <span>05</span>
-            <strong>Документы</strong>
+            <div class="process-step-head">
+              <span>05</span>
+              <strong>Документы</strong>
+            </div>
             <p>Выдается паспорт качества и отчетные документы.</p>
           </li>
         </ol>
