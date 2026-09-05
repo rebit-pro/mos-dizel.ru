@@ -1,9 +1,8 @@
 name: Deploy
 
+# Публикация на GH Pages переведена в ручной режим (launch-plan Л2/Л5):
+# staging живёт на сервере студии, прод-выкладка на Pages — только осознанным запуском.
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:

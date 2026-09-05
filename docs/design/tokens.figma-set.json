@@ -1,0 +1,556 @@
+{
+  "color": {
+    "bg": {
+      "value": "#121314",
+      "type": "color",
+      "description": "Фон страницы — «нефть»"
+    },
+    "surface": {
+      "value": "#1A1C1E",
+      "type": "color",
+      "description": "Карточки, header, панель формы"
+    },
+    "surface-alt": {
+      "value": "#202325",
+      "type": "color",
+      "description": "Чередование секций"
+    },
+    "surface-raised": {
+      "value": "#26292C",
+      "type": "color",
+      "description": "Hover карточек, выпадающие списки, чипы"
+    },
+    "plate": {
+      "value": "#0C0D0E",
+      "type": "color",
+      "description": "Footer, контактная плашка, мобильная панель"
+    },
+    "sheen-green": {
+      "value": "#1E2420",
+      "type": "color",
+      "description": "Нефтяной отблеск — только внутри градиентов"
+    },
+    "sheen-warm": {
+      "value": "#241F14",
+      "type": "color",
+      "description": "Тёплый отблеск — только внутри градиентов"
+    },
+    "text": {
+      "value": "#F1EFEA",
+      "type": "color",
+      "description": "Основной текст, 16.2:1 на bg"
+    },
+    "text-muted": {
+      "value": "#A9AEB1",
+      "type": "color",
+      "description": "Вторичный текст, подписи"
+    },
+    "text-subtle": {
+      "value": "#7C8286",
+      "type": "color",
+      "description": "Только 14px+ на bg/surface"
+    },
+    "text-inverse": {
+      "value": "#121314",
+      "type": "color",
+      "description": "Текст на жёлтом CTA"
+    },
+    "accent": {
+      "value": "#F2D31B",
+      "type": "color",
+      "description": "Жёлтый: только primary-CTA, фокус, числовые метки"
+    },
+    "accent-hover": {
+      "value": "#F7DD3F",
+      "type": "color"
+    },
+    "accent-active": {
+      "value": "#E3C412",
+      "type": "color"
+    },
+    "accent-tint": {
+      "value": "#2B2811",
+      "type": "color",
+      "description": "Фон номера шага, выделенной строки"
+    },
+    "primary": {
+      "value": "#3DB273",
+      "type": "color",
+      "description": "Бренд-зелёный: ссылки, ghost-кнопки, success"
+    },
+    "primary-hover": {
+      "value": "#5CC58B",
+      "type": "color"
+    },
+    "primary-tint": {
+      "value": "#16291D",
+      "type": "color",
+      "description": "Success-панель, активная карточка"
+    },
+    "steel": {
+      "value": "#3A4045",
+      "type": "color",
+      "description": "Иконки второго плана"
+    },
+    "line": {
+      "value": "#2F3336",
+      "type": "color",
+      "description": "Границы карточек, инпутов"
+    },
+    "line-strong": {
+      "value": "#4B5155",
+      "type": "color",
+      "description": "Hover-граница, secondary-кнопка"
+    },
+    "error": {
+      "value": "#F2555A",
+      "type": "color",
+      "description": "Текст ошибки — на surface"
+    },
+    "error-tint": {
+      "value": "#3A1A1C",
+      "type": "color"
+    },
+    "warning": {
+      "value": "#E39B00",
+      "type": "color"
+    },
+    "warning-tint": {
+      "value": "#2E2410",
+      "type": "color"
+    },
+    "ind-red": {
+      "value": "#D8383D",
+      "type": "color",
+      "description": "Отраслевой спектр: метка «летнее». Не текст, не фон, не CTA"
+    },
+    "ind-amber": {
+      "value": "#E39B00",
+      "type": "color",
+      "description": "Отраслевой спектр: метка «межсезонное». Никогда вместо accent"
+    },
+    "ind-blue": {
+      "value": "#4C9BE8",
+      "type": "color",
+      "description": "Отраслевой спектр: метка «зимнее»"
+    },
+    "ind-green": {
+      "value": "#5CD08F",
+      "type": "color",
+      "description": "Отраслевой спектр: ключ карточки производителя. Никогда вместо primary"
+    }
+  },
+  "font": {
+    "display": {
+      "value": "Manrope",
+      "type": "fontFamilies",
+      "description": "Заголовки, числовые факты. Google Fonts, кириллица"
+    },
+    "body": {
+      "value": "Golos Text",
+      "type": "fontFamilies",
+      "description": "Текст и интерфейс. Google Fonts, кириллица"
+    }
+  },
+  "fontWeight": {
+    "regular": {
+      "value": "400",
+      "type": "fontWeights"
+    },
+    "medium": {
+      "value": "500",
+      "type": "fontWeights"
+    },
+    "semibold": {
+      "value": "600",
+      "type": "fontWeights"
+    },
+    "bold": {
+      "value": "700",
+      "type": "fontWeights"
+    },
+    "black": {
+      "value": "800",
+      "type": "fontWeights"
+    }
+  },
+  "fontSize": {
+    "display": {
+      "value": "52",
+      "type": "fontSizes",
+      "description": "H1 hero desktop; mobile 34"
+    },
+    "display-mobile": {
+      "value": "34",
+      "type": "fontSizes"
+    },
+    "h2": {
+      "value": "34",
+      "type": "fontSizes",
+      "description": "mobile 26"
+    },
+    "h2-mobile": {
+      "value": "26",
+      "type": "fontSizes"
+    },
+    "h3": {
+      "value": "22",
+      "type": "fontSizes",
+      "description": "mobile 19"
+    },
+    "h4": {
+      "value": "18",
+      "type": "fontSizes"
+    },
+    "lead": {
+      "value": "18",
+      "type": "fontSizes",
+      "description": "mobile 16"
+    },
+    "body": {
+      "value": "16",
+      "type": "fontSizes"
+    },
+    "small": {
+      "value": "14",
+      "type": "fontSizes"
+    },
+    "caption": {
+      "value": "12",
+      "type": "fontSizes"
+    },
+    "num": {
+      "value": "28",
+      "type": "fontSizes",
+      "description": "Факты-плитки, tabular; mobile 24"
+    }
+  },
+  "lineHeight": {
+    "tight": {
+      "value": "108%",
+      "type": "lineHeights"
+    },
+    "heading": {
+      "value": "120%",
+      "type": "lineHeights"
+    },
+    "body": {
+      "value": "155%",
+      "type": "lineHeights"
+    },
+    "small": {
+      "value": "145%",
+      "type": "lineHeights"
+    }
+  },
+  "letterSpacing": {
+    "display": {
+      "value": "-2%",
+      "type": "letterSpacing"
+    },
+    "heading": {
+      "value": "-1.5%",
+      "type": "letterSpacing"
+    },
+    "caption": {
+      "value": "6%",
+      "type": "letterSpacing"
+    }
+  },
+  "typography": {
+    "display": {
+      "value": {
+        "fontFamily": "{font.display}",
+        "fontWeight": "{fontWeight.black}",
+        "fontSize": "{fontSize.display}",
+        "lineHeight": "{lineHeight.tight}",
+        "letterSpacing": "{letterSpacing.display}"
+      },
+      "type": "typography"
+    },
+    "h2": {
+      "value": {
+        "fontFamily": "{font.display}",
+        "fontWeight": "{fontWeight.bold}",
+        "fontSize": "{fontSize.h2}",
+        "lineHeight": "{lineHeight.heading}",
+        "letterSpacing": "{letterSpacing.heading}"
+      },
+      "type": "typography"
+    },
+    "h3": {
+      "value": {
+        "fontFamily": "{font.display}",
+        "fontWeight": "{fontWeight.bold}",
+        "fontSize": "{fontSize.h3}",
+        "lineHeight": "{lineHeight.heading}"
+      },
+      "type": "typography"
+    },
+    "h4": {
+      "value": {
+        "fontFamily": "{font.body}",
+        "fontWeight": "{fontWeight.semibold}",
+        "fontSize": "{fontSize.h4}",
+        "lineHeight": "{lineHeight.heading}"
+      },
+      "type": "typography"
+    },
+    "lead": {
+      "value": {
+        "fontFamily": "{font.body}",
+        "fontWeight": "{fontWeight.regular}",
+        "fontSize": "{fontSize.lead}",
+        "lineHeight": "{lineHeight.body}"
+      },
+      "type": "typography"
+    },
+    "body": {
+      "value": {
+        "fontFamily": "{font.body}",
+        "fontWeight": "{fontWeight.regular}",
+        "fontSize": "{fontSize.body}",
+        "lineHeight": "{lineHeight.body}"
+      },
+      "type": "typography"
+    },
+    "body-medium": {
+      "value": {
+        "fontFamily": "{font.body}",
+        "fontWeight": "{fontWeight.medium}",
+        "fontSize": "{fontSize.body}",
+        "lineHeight": "{lineHeight.body}"
+      },
+      "type": "typography"
+    },
+    "small": {
+      "value": {
+        "fontFamily": "{font.body}",
+        "fontWeight": "{fontWeight.regular}",
+        "fontSize": "{fontSize.small}",
+        "lineHeight": "{lineHeight.small}"
+      },
+      "type": "typography"
+    },
+    "caption": {
+      "value": {
+        "fontFamily": "{font.body}",
+        "fontWeight": "{fontWeight.semibold}",
+        "fontSize": "{fontSize.caption}",
+        "lineHeight": "{lineHeight.heading}",
+        "letterSpacing": "{letterSpacing.caption}",
+        "textCase": "uppercase"
+      },
+      "type": "typography"
+    },
+    "button": {
+      "value": {
+        "fontFamily": "{font.body}",
+        "fontWeight": "{fontWeight.bold}",
+        "fontSize": "{fontSize.body}",
+        "lineHeight": "100%"
+      },
+      "type": "typography"
+    },
+    "num": {
+      "value": {
+        "fontFamily": "{font.display}",
+        "fontWeight": "{fontWeight.black}",
+        "fontSize": "{fontSize.num}",
+        "lineHeight": "100%"
+      },
+      "type": "typography"
+    }
+  },
+  "space": {
+    "1": {
+      "value": "4",
+      "type": "spacing"
+    },
+    "2": {
+      "value": "8",
+      "type": "spacing"
+    },
+    "3": {
+      "value": "12",
+      "type": "spacing"
+    },
+    "4": {
+      "value": "16",
+      "type": "spacing"
+    },
+    "6": {
+      "value": "24",
+      "type": "spacing"
+    },
+    "8": {
+      "value": "32",
+      "type": "spacing"
+    },
+    "12": {
+      "value": "48",
+      "type": "spacing"
+    },
+    "16": {
+      "value": "64",
+      "type": "spacing"
+    },
+    "24": {
+      "value": "96",
+      "type": "spacing"
+    },
+    "section-y": {
+      "value": "96",
+      "type": "spacing",
+      "description": "tablet 64, mobile 48"
+    },
+    "card-pad": {
+      "value": "24",
+      "type": "spacing",
+      "description": "mobile 16"
+    },
+    "gutter": {
+      "value": "24",
+      "type": "spacing"
+    },
+    "page-pad": {
+      "value": "24",
+      "type": "spacing",
+      "description": "mobile 16"
+    }
+  },
+  "size": {
+    "container-max": {
+      "value": "1200",
+      "type": "sizing"
+    },
+    "control-h": {
+      "value": "48",
+      "type": "sizing",
+      "description": "Кнопки и поля"
+    },
+    "control-h-hero": {
+      "value": "52",
+      "type": "sizing"
+    },
+    "touch-min": {
+      "value": "44",
+      "type": "sizing"
+    },
+    "mobile-panel-h": {
+      "value": "56",
+      "type": "sizing"
+    },
+    "spectrum-line-h": {
+      "value": "2",
+      "type": "sizing",
+      "description": "Сигнальная линия отраслевого спектра"
+    },
+    "bp-sm": {
+      "value": "480",
+      "type": "sizing"
+    },
+    "bp-md": {
+      "value": "768",
+      "type": "sizing"
+    },
+    "bp-lg": {
+      "value": "1024",
+      "type": "sizing"
+    },
+    "bp-xl": {
+      "value": "1280",
+      "type": "sizing"
+    }
+  },
+  "radius": {
+    "s": {
+      "value": "4",
+      "type": "borderRadius"
+    },
+    "m": {
+      "value": "8",
+      "type": "borderRadius"
+    },
+    "l": {
+      "value": "12",
+      "type": "borderRadius"
+    },
+    "pill": {
+      "value": "999",
+      "type": "borderRadius"
+    }
+  },
+  "borderWidth": {
+    "card": {
+      "value": "1",
+      "type": "borderWidth"
+    },
+    "button": {
+      "value": "1.5",
+      "type": "borderWidth"
+    },
+    "focus": {
+      "value": "2",
+      "type": "borderWidth"
+    }
+  },
+  "shadow": {
+    "float": {
+      "value": {
+        "x": "0",
+        "y": "12",
+        "blur": "32",
+        "spread": "0",
+        "color": "rgba(0,0,0,0.45)",
+        "type": "dropShadow"
+      },
+      "type": "boxShadow",
+      "description": "Только hero-форма, sticky, попапы"
+    },
+    "highlight-top": {
+      "value": {
+        "x": "0",
+        "y": "1",
+        "blur": "0",
+        "spread": "0",
+        "color": "rgba(255,255,255,0.04)",
+        "type": "innerShadow"
+      },
+      "type": "boxShadow",
+      "description": "Единственная глубина карточек"
+    },
+    "ring-focus": {
+      "value": {
+        "x": "0",
+        "y": "0",
+        "blur": "0",
+        "spread": "3",
+        "color": "rgba(242,211,27,0.22)",
+        "type": "dropShadow"
+      },
+      "type": "boxShadow"
+    },
+    "ring-error": {
+      "value": {
+        "x": "0",
+        "y": "0",
+        "blur": "0",
+        "spread": "3",
+        "color": "rgba(242,85,90,0.22)",
+        "type": "boxShadow"
+      },
+      "type": "boxShadow"
+    }
+  },
+  "motion": {
+    "fast": {
+      "value": "120ms",
+      "type": "other"
+    },
+    "base": {
+      "value": "180ms",
+      "type": "other"
+    }
+  }
+}

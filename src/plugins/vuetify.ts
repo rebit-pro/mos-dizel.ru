@@ -1,23 +1,14 @@
 import { createVuetify } from 'vuetify';
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg';
 import { icons } from './mdi-icon'; // Import icons from separate file
-import { PurpleTheme, GreenTheme, PinkTheme, YellowTheme, SeaGreenTheme, OliveGreenTheme, SpeechBlueTheme } from '@/theme/LightTheme';
-import {
-  DarkPurpleTheme,
-  DarkGreenTheme,
-  DarkSpeechBlueTheme,
-  DarkOliveGreenTheme,
-  DarkPinkTheme,
-  DarkYellowTheme,
-  DarkSeaGreenTheme
-} from '@/theme/DarkTheme';
+import { MosDizelTheme } from '@/theme/MosDizelTheme';
 import { createVueI18nAdapter } from 'vuetify/locale/adapters/vue-i18n';
 import { createI18n, useI18n } from 'vue-i18n';
 import { messages } from '@/utils/locales/messages';
 
 export const i18n = createI18n({
   legacy: false,
-  locale: 'en',
+  locale: 'ru',
   fallbackLocale: 'en',
   messages
 });
@@ -37,22 +28,9 @@ export default createVuetify({
     }
   },
   theme: {
-    defaultTheme: 'PurpleTheme',
+    defaultTheme: 'MosDizelTheme',
     themes: {
-      PurpleTheme,
-      GreenTheme,
-      PinkTheme,
-      YellowTheme,
-      SeaGreenTheme,
-      OliveGreenTheme,
-      SpeechBlueTheme,
-      DarkPurpleTheme,
-      DarkGreenTheme,
-      DarkSpeechBlueTheme,
-      DarkOliveGreenTheme,
-      DarkPinkTheme,
-      DarkYellowTheme,
-      DarkSeaGreenTheme
+      MosDizelTheme
     }
   },
   defaults: {
@@ -64,7 +42,6 @@ export default createVuetify({
       rounded: 'lg'
     },
     VTooltip: {
-      // set v-tooltip default location to top
       location: 'top'
     }
   }

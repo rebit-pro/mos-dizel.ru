@@ -10,12 +10,16 @@
     "preview": "vite preview",
     "typecheck": "vue-tsc --noEmit",
     "lint": "eslint . --ignore-pattern .gitignore",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "prerender": "node scripts/prerender.mjs",
+    "sitemap": "node scripts/sitemap.mjs",
+    "build:site": "npm run build && node scripts/prerender.mjs && node scripts/sitemap.mjs"
   },
   "dependencies": {
     "@mdi/js": "^7.4.47",
     "@tsconfig/node24": "^24.0.3",
     "@typescript-eslint/parser": "8.47.0",
+    "@unhead/vue": "^3.4.0",
     "@vue/eslint-config-prettier": "10.2.0",
     "axios": "1.13.2",
     "axios-mock-adapter": "2.1.0",
@@ -44,6 +48,7 @@
     "@vue/tsconfig": "0.8.1",
     "eslint": "9.39.1",
     "eslint-plugin-vue": "10.5.1",
+    "playwright-core": "^1.63.0",
     "prettier": "3.6.2",
     "sass": "1.94.1",
     "sass-loader": "16.0.6",

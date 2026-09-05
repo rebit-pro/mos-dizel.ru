@@ -25,6 +25,10 @@ export type ThemeTypes = {
     surface?: string;
     background?: string;
     'on-surface-variant'?: string;
+    'on-primary'?: string;
+    'on-secondary'?: string;
+    'on-surface'?: string;
+    'on-background'?: string;
     facebook?: string;
     twitter?: string;
     linkedin?: string;

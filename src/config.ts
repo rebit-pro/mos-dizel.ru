@@ -18,9 +18,9 @@ const config: ConfigProps = {
   Customizer_drawer: false,
   mini_sidebar: false,
   setHorizontalLayout: false, // Horizontal layout
-  actTheme: 'PurpleTheme',
-  themeMode: ThemeMode.Light,
-  fontTheme: 'Roboto',
+  actTheme: 'MosDizelTheme',
+  themeMode: ThemeMode.Dark,
+  fontTheme: 'Golos Text',
   inputBg: false,
   boxed: false,
   isRtl: false
