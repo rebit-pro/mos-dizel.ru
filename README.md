@@ -60,6 +60,17 @@ APP_PORT=8081 make docker-up
 
 Без `make` используются команды `docker compose up --build -d`, `docker compose ps` и `docker compose down`.
 
+
+## Staging
+
+Стенд `https://mos-dizel.rebit-pro.ru` (закрыт от роботов: noindex + robots Disallow, без счётчиков) живёт на сервере студии как swarm-сервис `mosdizel_web` за Traefik. Обновление одним скриптом:
+
+```bash
+./scripts/deploy-staging.sh
+```
+
+Скрипт собирает образ локально с `docker/nginx/staging.conf`, переносит его по SSH (`ssh rebit-pro`) и перезапускает стек `/opt/mos-dizel/stack.yml`.
+
 ## Deploy
 
 Deploy настроен в `.github/workflows/deploy.yml`: `npm ci` -> `npm run build` -> публикация `dist/` через GitHub Pages.

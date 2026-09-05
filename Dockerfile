@@ -19,7 +19,9 @@ RUN npm run build:site
 
 FROM nginx:1.29-alpine3.23 AS runtime
 
-COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf
+# default.conf — прод; staging.conf (noindex) выбирается сборкой: --build-arg NGINX_CONF=staging.conf
+ARG NGINX_CONF=default.conf
+COPY docker/nginx/${NGINX_CONF} /etc/nginx/conf.d/default.conf
 COPY --from=build /app/dist /usr/share/nginx/html
 
 EXPOSE 80
